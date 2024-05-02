@@ -2,13 +2,21 @@ baseURL: https://example.org/
 languageCode: en-us
 title: My New Hugo Site
 
-theme: relearn
+theme: 
+  - relearn
+  - reveal
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true  # Allows HTML in Markdown
 
 
-# module:
-#   mounts:
-#   - source: content-L1
-#     target: content
+outputFormats:
+  Reveal:
+    baseName: "slides"
+    mediaType: "text/html"
+    isHTML: true
 
 params: 
   ordersectionsby: weight
